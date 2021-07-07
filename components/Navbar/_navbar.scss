@@ -1,0 +1,52 @@
+.navbar {
+	height: 64px;
+	width: 100%;
+	background: $white;
+	color: $black;
+	position: fixed;
+	top: 0;
+	padding: 0 5vw;
+	font-weight: bold;
+	border-bottom: thin solid $grey;
+	box-shadow: $shadow-1;
+	z-index: 17;
+
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		height: 100%;
+
+		li:first-child {
+			margin-right: auto;
+		}
+
+		button {
+			padding: 1vh 1.2vw;
+			border-radius: 8px;
+			background: $white;
+			box-shadow: $shadow-2;
+			color: $accent;
+			border: thin solid $accent;
+
+			transition: 0.3s ease-in-out;
+
+			&:focus,
+			&:active {
+				box-shadow: $shadow-low;
+			}
+
+			&:hover {
+				background: $accent;
+				color: $white;
+			}
+		}
+	}
+
+	img {
+		border-radius: 50%;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
+	}
+}

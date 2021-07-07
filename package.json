@@ -1,21 +1,24 @@
 {
-  "name": "blo",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "11.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.11",
-    "eslint": "7.28.0",
-    "eslint-config-next": "11.0.0"
-  }
+	"name": "blo",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"firebase": "^8.7.0",
+		"next": "11.0.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-firebase-hooks": "^3.0.4",
+		"react-hot-toast": "^2.0.0",
+		"sass": "^1.35.1"
+	},
+	"devDependencies": {
+		"eslint": "7.28.0",
+		"eslint-config-next": "11.0.0"
+	}
 }

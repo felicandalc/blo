@@ -1,7 +1,18 @@
-import '../styles/globals.css'
+import '../styles/globals.scss';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import Navbar from '../components/Navbar/Navbar';
+import {Toaster} from 'react-hot-toast';
+
+function MyApp({Component, pageProps}) {
+	return (
+		<>
+			<Navbar />
+			<main className="main">
+				<Component {...pageProps} />
+			</main>
+			<Toaster />
+		</>
+	);
 }
 
-export default MyApp
+export default MyApp;
