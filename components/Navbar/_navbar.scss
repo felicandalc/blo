@@ -17,8 +17,16 @@
 		justify-content: space-evenly;
 		height: 100%;
 
-		li:first-child {
-			margin-right: auto;
+		li {
+			display: flex;
+			align-items: center;
+
+			&:first-child {
+				margin-right: auto;
+			}
+			&:not(:first-child):not(:last-child) {
+				margin-right: 16px;
+			}
 		}
 
 		button {
@@ -40,6 +48,12 @@
 				background: $accent;
 				color: $white;
 			}
+		}
+
+		svg {
+			cursor: pointer;
+			height: 24px;
+			width: 24px;
 		}
 	}
 
