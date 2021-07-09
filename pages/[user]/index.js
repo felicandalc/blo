@@ -11,7 +11,7 @@ const ProfilePage = ({}) => {
 	);
 };
 
-export async function getServerSideProps({query}) {
+export const getServerSideProps = async ({query}) => {
 	const {username} = query;
 
 	const userDoc = await getUserWithUsername(username);
@@ -32,6 +32,6 @@ export async function getServerSideProps({query}) {
 	return {
 		props: {user, posts},
 	};
-}
+};
 
 export default ProfilePage;
