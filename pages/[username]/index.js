@@ -1,12 +1,15 @@
 import {getUserWithUsername, postToJSON} from '../../lib/firebase';
+
+import s from '../../styles/UserPage.module.scss';
+
 import {UserProfile} from '../../components/UserProfile';
 import {PostFeed} from '../../components/PostFeed';
 import {Metatags} from '../../components/Metatags';
 
-const ProfilePage = ({}) => {
+const ProfilePage = ({user, posts}) => {
 	return (
-		<section>
-			<Metatags title="User profile page." />
+		<section className={s['profile-page']}>
+			<Metatags title="Perfil" />
 			<UserProfile user={user} />
 			<PostFeed posts={posts} />
 		</section>
@@ -17,6 +20,8 @@ export const getServerSideProps = async ({query}) => {
 	const {username} = query;
 
 	const userDoc = await getUserWithUsername(username);
+
+	console.log(userDoc);
 
 	let user = null;
 	let posts = null;

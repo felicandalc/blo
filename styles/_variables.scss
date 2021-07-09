@@ -6,8 +6,26 @@ $accent-2: #3b14a7;
 $white: #fefefe;
 $black: #272727;
 $grey: #e4e4e4;
+$dark-grey: #ccc;
 
 // Shadows
 $shadow-1: 0px 0px 15px 4px rgba(0, 0, 0, 0.15);
 $shadow-2: 0px 2px 4px 4px rgba(0, 0, 0, 0.1);
-$shadow-low: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+$shadow-3: 0px 0px 15px 4px rgba(0, 0, 0, 0.06);
+$shadow-low: 0px 0px 4px 1px rgba(0, 0, 0, 0.08);
+
+:root {
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+	--accent: #{$accent};
+	--accent-2: #{$accent-2};
+	--white: #{$white};
+	--black: #{$black};
+	--grey: #{$grey};
+	--dark-grey: #{$dark-grey};
+
+	--shadow-1: #{$shadow-1};
+	--shadow-2: #{$shadow-2};
+	--shadow-3: #{$shadow-3};
+	--shadow-low: #{$shadow-low};
+}

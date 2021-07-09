@@ -1,0 +1,27 @@
+.post-card {
+	border-radius: 8px;
+	border: thin solid var(--grey);
+	padding: 2vh 2vw;
+	min-width: 346px;
+	width: 80%;
+	max-width: 1024px;
+
+	transition: 0.3s ease-in-out;
+
+	&:hover {
+		box-shadow: var(--shadow-3);
+	}
+
+	&__author {
+		color: var(--accent);
+	}
+
+	footer {
+		display: flex;
+		flex-direction: column;
+
+		*:first-child {
+			margin-bottom: 2vh;
+		}
+	}
+}

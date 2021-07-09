@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Page404 = () => {
 	return (
-		<main>
+		<section>
 			<h1>404 | Parece que estás perdido...</h1>
 			<iframe
 				src="https://giphy.com/embed/l2JehQ2GitHGdVG9y"
@@ -13,7 +13,7 @@ const Page404 = () => {
 			<Link href="/">
 				<button>Volver</button>
 			</Link>
-		</main>
+		</section>
 	);
 };
 

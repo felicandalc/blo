@@ -1,1 +1,1 @@
-export * from './Metatags';
+export {default as Metatags} from './Metatags';

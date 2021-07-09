@@ -1,0 +1,17 @@
+.user-profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 4vh;
+
+	&__img {
+		border-radius: 50%;
+		box-shadow: var(--shadow-1);
+	}
+	&__username {
+		color: var(--accent);
+	}
+	h2 {
+		margin: 0.2vh 0;
+	}
+}

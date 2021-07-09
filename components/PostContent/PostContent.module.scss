@@ -1,0 +1,22 @@
+.post-content {
+	&__title {
+		color: var(--accent);
+	}
+
+	&__body {
+		margin: 5vh 0;
+	}
+
+	&__description {
+		font-size: 0.9em;
+
+		a {
+			color: var(--accent);
+		}
+
+		&__date {
+			color: var(--dark-grey);
+			font-size: 0.8em;
+		}
+	}
+}

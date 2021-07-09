@@ -1,1 +1,1 @@
-export * from './PostContent';
+export {default as PostContent} from './PostContent';

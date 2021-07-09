@@ -1,14 +1,21 @@
 import Link from 'next/link';
 
+import s from './PostItem.module.scss';
+
 const PostItem = ({post, admin = false}) => {
 	const wordCount = post?.content.trim().split(/\s+/g).length;
 	const minutesToRead = (wordCount / 100 + 1).toFixed(0);
 
 	return (
-		<div>
+		<article className={s['post-card']}>
 			<Link href={`/${post.username}`}>
 				<a>
-					<strong>By @{post.username}</strong>
+					<strong>
+						Escrito por{' '}
+						<span className={s['post-card__author']}>
+							@{post.username}
+						</span>
+					</strong>
 				</a>
 			</Link>
 
@@ -20,9 +27,9 @@ const PostItem = ({post, admin = false}) => {
 
 			<footer>
 				<span>
-					{wordCount} words. {minutesToRead} min read
+					{wordCount} palabras. {minutesToRead} minutos de lectura.
 				</span>
-				<span>💗 {post.heartCount || 0} Hearts</span>
+				<strong>💗 {post.heartCount || 0} Hearts</strong>
 			</footer>
 
 			{/* If admin view, show extra controls for user */}
@@ -30,14 +37,14 @@ const PostItem = ({post, admin = false}) => {
 				<>
 					<Link href={`/admin/${post.slug}`}>
 						<h3>
-							<button>Edit</button>
+							<button>Editar</button>
 						</h3>
 					</Link>
 
-					{post.published ? <p>Live</p> : <p>Unpublished</p>}
+					{post.published ? <p>Publicado</p> : <p>No publicado</p>}
 				</>
 			)}
-		</div>
+		</article>
 	);
 };
 

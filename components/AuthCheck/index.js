@@ -1,1 +1,1 @@
-export * from './AuthCheck';
+export {default as AuthCheck} from './AuthCheck';

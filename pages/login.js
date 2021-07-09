@@ -49,7 +49,7 @@ const SignInButton = () => {
 const SignOutButton = () => {
 	return (
 		<button className={s['sign-out']} onClick={() => auth.signOut()}>
-			Sign Out
+			Salir
 		</button>
 	);
 };
@@ -130,15 +130,6 @@ const UsernameForm = () => {
 					<button type="submit" disabled={!isValid}>
 						Crear
 					</button>
-
-					<h3>Debug state</h3>
-					<div>
-						Username: {formValue}
-						<br />
-						Loading: {loading.toString()}
-						<br />
-						Username valid: {isValid.toString()}
-					</div>
 				</form>
 			</section>
 		)

@@ -4,14 +4,14 @@ import {UserContext} from '../../lib/userContext';
 import Link from 'next/link';
 
 const Navbar = () => {
-	const {user, username} = useContext(UserContext);
+	const {username} = useContext(UserContext);
 
 	return (
 		<nav className="navbar">
 			<ul>
 				<li>
 					<Link href="/">
-						<button>Home</button>
+						<button>Inicio</button>
 					</Link>
 				</li>
 
@@ -19,7 +19,7 @@ const Navbar = () => {
 					<>
 						<li>
 							<Link href="/admin">
-								<button>Write Posts</button>
+								<button>Escribir posts</button>
 							</Link>
 						</li>
 						<li>
@@ -42,7 +42,7 @@ const Navbar = () => {
 				{!username && (
 					<li>
 						<Link href="/login">
-							<button className="btn-blue">Log in</button>
+							<button className="btn-blue">Ingresar</button>
 						</Link>
 					</li>
 				)}

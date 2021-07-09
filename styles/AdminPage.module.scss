@@ -1,0 +1,19 @@
+.admin-page {
+	article {
+		width: 100%;
+
+		&:not(:last-of-type) {
+			margin-bottom: 4vh;
+		}
+	}
+
+	&__form {
+		display: inline-flex;
+		flex-direction: column;
+
+		&__input {
+			margin: 6vh 0 3vh 0;
+			border-bottom: thin solid var(--black);
+		}
+	}
+}

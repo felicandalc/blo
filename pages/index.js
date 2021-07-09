@@ -3,19 +3,21 @@ import {useState} from 'react';
 import {firestore, fromMillis, postToJSON} from '../lib/firebase';
 import CONFIG from '../config/index';
 
-import Spinner from '../components/Spinner/Spinner';
-import {PostFeed} from '../components/PostFeed';
-import {Metatags} from '../../components/Metatags';
+import s from '../styles/Home.module.scss';
 
-const Home = ({postsList}) => {
-	const [posts, setPosts] = useState(postsList);
+import {Spinner} from '../components/Spinner';
+import {PostFeed} from '../components/PostFeed';
+import {Metatags} from '../components/Metatags';
+
+const Home = ({posts}) => {
+	const [_posts, setPosts] = useState(posts);
 	const [loading, setLoading] = useState(false);
 
 	const [postsEnd, setPostsEnd] = useState(false);
 
 	const getMorePosts = async () => {
 		setLoading(true);
-		const last = posts[posts.length - 1];
+		const last = _posts[_posts.length - 1];
 
 		const cursor =
 			typeof last.createdAt === 'number'
@@ -31,24 +33,30 @@ const Home = ({postsList}) => {
 
 		const newPosts = (await query.get()).docs.map(doc => doc.data());
 
-		setPosts(posts.concat(newPosts));
+		setPosts(_posts.concat(newPosts));
 		setLoading(false);
 
-		if (newPosts.length < LIMIT) setPostsEnd(true);
+		if (newPosts.length < CONFIG.POSTS_LIMIT) setPostsEnd(true);
 	};
 
 	return (
-		<section>
-			<Metatags title="Home page." />
-			<PostFeed posts={posts} />
+		<section className={s.home}>
+			<Metatags title="Inicio" />
+			<PostFeed posts={_posts} />
 
 			{!loading && !postsEnd && (
-				<button onClick={getMorePosts}>Cargar más posts</button>
+				<button
+					className="button button__default"
+					onClick={getMorePosts}>
+					Cargar más posts
+				</button>
 			)}
 
 			<Spinner show={loading} />
 
-			{postsEnd && 'No hay más posts...'}
+			{postsEnd && (
+				<p className={s['home__no-more']}>No hay más posts...</p>
+			)}
 		</section>
 	);
 };
