@@ -2,17 +2,39 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
+	max-width: 1024px;
+	margin: 0 auto;
+
+	@media (max-width: 536px) {
+		flex-direction: column;
+
+		&__aside {
+			// TODO: research modules and this behaviour.
+			margin: 4vh 0 0 0 !important;
+			min-width: 100% !important;
+			flex-direction: row !important;
+			justify-content: center;
+
+			*:first-child {
+				margin-right: 2vw;
+			}
+		}
+	}
 
 	&__aside {
+		position: sticky;
+		top: calc(63px + 5vh);
 		order: 7;
 		width: 120px;
+		min-width: 120px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		border: thin solid var(--grey);
+		border-radius: 4px;
 		box-shadow: var(--shadow-3);
-		padding: 2vh 2vw;
+		padding: 12px;
 		margin-left: 8vw;
-		height: 120px;
+		height: fit-content;
 	}
 }

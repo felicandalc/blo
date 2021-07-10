@@ -16,6 +16,8 @@
 		align-items: center;
 		justify-content: space-evenly;
 		height: 100%;
+		max-width: 1024px;
+		margin: 0 auto;
 
 		li {
 			display: flex;
@@ -26,27 +28,6 @@
 			}
 			&:not(:first-child):not(:last-child) {
 				margin-right: 16px;
-			}
-		}
-
-		button {
-			padding: 1vh 1.2vw;
-			border-radius: 8px;
-			background: $white;
-			box-shadow: $shadow-2;
-			color: $accent;
-			border: thin solid $accent;
-
-			transition: 0.3s ease-in-out;
-
-			&:focus,
-			&:active {
-				box-shadow: $shadow-low;
-			}
-
-			&:hover {
-				background: $accent;
-				color: $white;
 			}
 		}
 

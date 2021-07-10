@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {auth, storage, STATE_CHANGED} from '../../lib/firebase';
 
+import s from './ImageUploader.module.scss';
+
 import {Spinner} from '../Spinner';
 
 const ImageUploader = () => {
@@ -36,13 +38,13 @@ const ImageUploader = () => {
 	};
 
 	return (
-		<div>
+		<div className={s['image-uploader']}>
 			<Spinner show={uploading} />
 			{uploading && <h3>{progress}%</h3>}
 
 			{!uploading && (
 				<>
-					<label className="btn">
+					<label className="button">
 						📸 Subir imagen
 						<input
 							type="file"
@@ -53,7 +55,12 @@ const ImageUploader = () => {
 				</>
 			)}
 
-			{downloadURL && <code>{`![alt](${downloadURL})`}</code>}
+			{downloadURL && (
+				<code
+					className={
+						s['image-uploader__code']
+					}>{`![alt](${downloadURL})`}</code>
+			)}
 		</div>
 	);
 };

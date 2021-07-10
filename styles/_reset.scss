@@ -16,6 +16,11 @@ a {
 	text-decoration: none;
 }
 
+img {
+	max-width: 100%;
+	border-radius: 4px;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -38,4 +43,8 @@ main {
 
 section {
 	padding: 5vh 5vw;
+}
+
+::selection {
+	background: $grey;
 }

@@ -1,9 +1,15 @@
 .button {
+	cursor: pointer;
 	border-radius: 8px;
-	padding: 1vh 2vw;
+	padding: 8px 12px;
 	width: max-content;
 	box-shadow: $shadow-3;
 	transition: 0.3s ease-in-out;
+
+	&:active {
+		color: $white;
+		background: $black;
+	}
 
 	&:hover {
 		box-shadow: $shadow-low;
@@ -24,7 +30,7 @@
 		}
 	}
 
-	&__default {
+	&--default {
 		background: $white;
 		border: thin solid $black;
 		color: $black;
@@ -32,6 +38,35 @@
 		&:hover {
 			background: $black;
 			color: $white;
+		}
+	}
+	&--default-inverted {
+		background: $black;
+		color: $white;
+		border: thin solid $black;
+
+		&:hover {
+			background: $white;
+			color: $black;
+		}
+	}
+	&--accent {
+		border: thin solid $accent;
+		color: $accent;
+
+		&:hover {
+			background: $accent;
+			color: $white;
+		}
+	}
+	&--accent-inverted {
+		color: $white;
+		background: $accent;
+		border: thin solid $accent;
+
+		&:hover {
+			background: $white;
+			color: $accent;
 		}
 	}
 }

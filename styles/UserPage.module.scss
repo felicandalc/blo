@@ -4,4 +4,8 @@
 	align-items: center;
 	width: 100vw;
 	padding: 5vh 0;
+
+	article:not(:last-child) {
+		margin-bottom: 4vh;
+	}
 }
