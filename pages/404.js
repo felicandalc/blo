@@ -1,17 +1,23 @@
 import Link from 'next/link';
 
+import s from '@/styles/Page404.module.scss';
+
 const Page404 = () => {
 	return (
-		<section>
-			<h1>404 | Parece que estás perdido...</h1>
+		<section className={s['page-404']}>
 			<iframe
-				src="https://giphy.com/embed/l2JehQ2GitHGdVG9y"
+				src="https://giphy.com/embed/3orif2hu7Es4jUyuXK"
 				width="480"
 				height="362"
 				frameBorder="0"
 				allowFullScreen></iframe>
+			<h2>
+				<strong>404</strong> | Parece que estás perdido...
+			</h2>
 			<Link href="/">
-				<button>Volver</button>
+				<button className="button button--default-inverted">
+					Volver
+				</button>
 			</Link>
 		</section>
 	);

@@ -7,6 +7,8 @@ $white: #fefefe;
 $black: #272727;
 $grey: #e4e4e4;
 $dark-grey: #ccc;
+$red: #f55d42;
+$green: #48d982;
 
 // Shadows
 $shadow-1: 0px 0px 15px 4px rgba(0, 0, 0, 0.15);
@@ -23,6 +25,8 @@ $shadow-low: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
 	--black: #{$black};
 	--grey: #{$grey};
 	--dark-grey: #{$dark-grey};
+	--error: #{$red};
+	--success: #{$green};
 
 	--shadow-1: #{$shadow-1};
 	--shadow-2: #{$shadow-2};

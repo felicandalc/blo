@@ -32,7 +32,9 @@ const SignInButton = () => {
 
 	return (
 		<>
-			<button className={s.google} onClick={signInWithGoogle}>
+			<button
+				className="button button--default"
+				onClick={signInWithGoogle}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"
@@ -55,7 +57,9 @@ const SignInButton = () => {
 
 const SignOutButton = () => {
 	return (
-		<button className={s['sign-out']} onClick={() => auth.signOut()}>
+		<button
+			className="button button--default"
+			onClick={() => auth.signOut()}>
 			Salir
 		</button>
 	);
@@ -120,10 +124,11 @@ const UsernameForm = () => {
 
 	return (
 		!username && (
-			<section>
+			<section className={s['login__create']}>
 				<h3>Cree su nombre de usuario</h3>
 				<form onSubmit={onSubmit}>
 					<input
+						className="input"
 						name="username"
 						placeholder="Usuario"
 						value={formValue}
@@ -134,7 +139,10 @@ const UsernameForm = () => {
 						isValid={isValid}
 						loading={loading}
 					/>
-					<button type="submit" disabled={!isValid}>
+					<button
+						className="button button--default"
+						type="submit"
+						disabled={!isValid}>
 						Crear
 					</button>
 				</form>
@@ -145,13 +153,25 @@ const UsernameForm = () => {
 
 const UsernameMessage = ({username, isValid, loading}) => {
 	if (loading) {
-		return <p>Validando...</p>;
+		return <p className={s['login__create--loading']}>Validando...</p>;
 	} else if (isValid) {
-		return <p>¡{username} está disponible!</p>;
+		return (
+			<p className={s['login__create--success']}>
+				¡{username} está disponible!
+			</p>
+		);
 	} else if (username && !isValid && username.length < 3) {
-		return <p>El usuario debe contener al menos 3 caracteres.</p>;
+		return (
+			<p className={s['login__create--error']}>
+				El usuario debe contener al menos 3 caracteres.
+			</p>
+		);
 	} else if (username && !isValid) {
-		return <p>Dicho usuario está en uso...</p>;
+		return (
+			<p className={s['login__create--error']}>
+				Dicho usuario está en uso...
+			</p>
+		);
 	} else {
 		return <p></p>;
 	}

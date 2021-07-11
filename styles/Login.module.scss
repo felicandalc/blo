@@ -1,29 +1,49 @@
-@import 'variables';
-
 .login {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: calc(100vh - 64px);
 
-	.google,
-	.sign-out {
-		display: inline-flex;
-		align-items: center;
-		background: $white;
-		border: thin solid $grey;
-		border-radius: 4px;
-		padding: 8px 16px;
+	button {
+		width: 35%;
+		max-width: 320px;
+		min-width: 220px;
+	}
 
-		transition: 0.3s ease-in-out;
+	button:first-of-type {
+		margin-bottom: 2vh;
 
 		*:first-child {
 			margin-right: 12px;
 		}
+	}
 
-		&:hover {
-			background: $black;
-			color: $white;
+	&__create {
+		width: 360px;
+
+		input {
+			margin: 2vh 0 0;
+			width: 100%;
+		}
+
+		p {
+			font-size: 0.8em;
+			height: 32px;
+		}
+		&--error {
+			color: var(--error);
+		}
+		&--loading {
+			color: var(--accent);
+		}
+		&--success {
+			color: var(--success);
+		}
+
+		button {
+			margin-top: 4vh;
+			width: 100%;
 		}
 	}
 }

@@ -31,7 +31,7 @@ const PostPage = ({path, post}) => {
 					<AuthCheck
 						fallback={
 							<Link href="/login">
-								<button className="button button__default-inverted">
+								<button className="button button--default-inverted">
 									💗 Ingresar
 								</button>
 							</Link>
