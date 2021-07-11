@@ -2,7 +2,7 @@ import {serverTimestamp} from '../../lib/firebase';
 import {useForm} from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {dracula} from 'react-syntax-highlighter/dist/esm/styles/prism';
+import {dracula} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import rehypeRaw from 'rehype-raw';
 import toast from 'react-hot-toast';
 
