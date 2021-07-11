@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import c from 'classnames';
 import s from './PostForm.module.scss';
 
-import {Hightlight} from '@lib/highlight';
+import {Hightlight} from '@/lib/highlight';
 import {ImageUploader} from '@/components/ImageUploader';
 
 const PostForm = ({defaultValues, postRef, preview}) => {
