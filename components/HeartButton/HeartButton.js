@@ -1,5 +1,5 @@
-import {firestore, auth, increment} from '../../lib/firebase';
 import {useDocument} from 'react-firebase-hooks/firestore';
+import {firestore, auth, increment} from '@/lib/firebase';
 
 const Heart = ({postRef}) => {
 	const heartRef = postRef.collection('hearts').doc(auth.currentUser.uid);
@@ -25,9 +25,15 @@ const Heart = ({postRef}) => {
 	};
 
 	return heartDoc?.exists ? (
-		<button onClick={removeHeart}>💔 Unlike</button>
+		<button
+			className="button button--default-inverted"
+			onClick={removeHeart}>
+			💔 Unlike
+		</button>
 	) : (
-		<button onClick={addHeart}>💗 Like</button>
+		<button className="butto button--default-inverted" onClick={addHeart}>
+			💗 Like
+		</button>
 	);
 };
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {useContext} from 'react';
-import {UserContext} from '../../lib/userContext';
+import {UserContext} from '@/lib/userContext';
 
 const AuthCheck = ({children, fallback}) => {
 	const {username} = useContext(UserContext);

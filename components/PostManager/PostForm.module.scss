@@ -1,4 +1,37 @@
 .post-form {
-	&__preview {
+	&__editor {
+		code,
+		textarea,
+		label {
+			margin-bottom: 2vh;
+			width: 100%;
+		}
+
+		textarea {
+			resize: none;
+			height: 50vh;
+			border: none;
+			background: var(--grey);
+			border-radius: 4px;
+			font-size: 1.1em;
+			padding: 8px;
+			margin-top: 2vh;
+
+			&::selection {
+				background: var(--black);
+				color: var(--white);
+			}
+		}
+		label {
+			display: flex;
+			align-items: center;
+			border: none;
+			font-size: 0.8em;
+
+			input {
+				margin-right: 8px;
+				filter: invert(100%) hue-rotate(240deg) brightness(1.7);
+			}
+		}
 	}
 }

@@ -1,4 +1,5 @@
 .post-card {
+	position: relative;
 	border-radius: 8px;
 	border: thin solid var(--grey);
 	padding: 2vh 2vw;
@@ -16,12 +17,15 @@
 		color: var(--accent);
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
+	&__hearts {
+		position: absolute;
+		right: 2vw;
+		top: 2vh;
+	}
 
+	footer {
 		*:first-child {
-			margin-bottom: 2vh;
+			font-size: 0.9em;
 		}
 	}
 }

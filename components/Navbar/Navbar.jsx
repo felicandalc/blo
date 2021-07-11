@@ -1,10 +1,10 @@
 import {useContext} from 'react';
-import {UserContext} from '../../lib/userContext';
-import {auth} from '../../lib/firebase';
+import {UserContext} from '@/lib/userContext';
+import {auth} from '@/lib/firebase';
 
 import Link from 'next/link';
 
-import FallbackIcon from '../../public/person-circle.svg';
+import FallbackIcon from '@/public/person-circle.svg';
 
 const Navbar = () => {
 	const {user, username} = useContext(UserContext);
@@ -17,7 +17,7 @@ const Navbar = () => {
 	return (
 		<header>
 			<nav className="navbar">
-				<ul>
+				<ul className="box">
 					<li>
 						<Link href="/">
 							<button className="button button--accent-inverted">

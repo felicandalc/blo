@@ -3,16 +3,20 @@ import {useForm} from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import toast from 'react-hot-toast';
 
+import c from 'classnames';
 import s from './PostForm.module.scss';
 
-import {ImageUploader} from '../../components/ImageUploader';
+import {ImageUploader} from '@/components/ImageUploader';
 
 const PostForm = ({defaultValues, postRef, preview}) => {
+	const editor = c(s['post-form__editor'], {
+		hidden: preview,
+		visibile: !preview,
+	});
 	const {register, handleSubmit, reset, watch, formState} = useForm({
 		defaultValues,
 		mode: 'onChange',
 	});
-
 	const {isValid, isDirty} = formState;
 
 	const updatePost = async ({content, published}) => {
@@ -35,7 +39,7 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 				</div>
 			)}
 
-			<div className={preview ? 'hidden' : 'visible'}>
+			<div className={editor}>
 				<ImageUploader />
 
 				<textarea
@@ -46,18 +50,26 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 							message: 'Escribí un poco más.....',
 						},
 						required: {value: true, message: 'Campo requerido'},
-					})}></textarea>
+					})}
+					contentEditable></textarea>
 
-				<fieldset>
-					<input name="published" type="checkbox" {...register} />
-					<label>Publicado</label>
-				</fieldset>
+				<label className="button button--default" for="published">
+					<input
+						id="published"
+						type="checkbox"
+						{...register('published')}
+					/>
+					Publicado
+				</label>
 
 				{formState.errors.content && (
-					<p>{formState.errors.content.message}</p>
+					<p className="error">{formState.errors.content.message}</p>
 				)}
 
-				<button type="submit" disabled={!isDirty || !isValid}>
+				<button
+					className="button button--default"
+					type="submit"
+					disabled={!isDirty || !isValid}>
 					Guardar cambios
 				</button>
 			</div>

@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
-import {firestore, auth} from '../../lib/firebase';
+import {firestore, auth} from '@/lib/firebase';
 import {useDocumentData} from 'react-firebase-hooks/firestore';
 
 import s from './PostManager.module.scss';
@@ -38,7 +38,7 @@ const PostManager = () => {
 					<aside className={s['aside']}>
 						<h3>Herramientas</h3>
 						<button
-							className="button"
+							className="button button--default-inverted"
 							onClick={() => setPreview(!preview)}>
 							{preview ? 'Editar' : 'Previsualizar'}
 						</button>

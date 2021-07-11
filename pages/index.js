@@ -1,8 +1,8 @@
 import {useState} from 'react';
-
 import {firestore, fromMillis, postToJSON} from '../lib/firebase';
 import CONFIG from '../config/index';
 
+import c from 'classnames';
 import s from '../styles/Home.module.scss';
 
 import {Spinner} from '../components/Spinner';
@@ -14,6 +14,8 @@ const Home = ({posts}) => {
 	const [loading, setLoading] = useState(false);
 
 	const [postsEnd, setPostsEnd] = useState(false);
+
+	const classes = c(s.home, 'box');
 
 	const getMorePosts = async () => {
 		setLoading(true);
@@ -40,7 +42,7 @@ const Home = ({posts}) => {
 	};
 
 	return (
-		<section className={s.home}>
+		<section className={classes}>
 			<Metatags title="Inicio" />
 			<PostFeed posts={_posts} />
 

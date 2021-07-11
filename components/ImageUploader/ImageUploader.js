@@ -1,9 +1,9 @@
 import {useState} from 'react';
-import {auth, storage, STATE_CHANGED} from '../../lib/firebase';
+import {auth, storage, STATE_CHANGED} from '@/lib/firebase';
 
 import s from './ImageUploader.module.scss';
 
-import {Spinner} from '../Spinner';
+import {Spinner} from '@/components/Spinner';
 
 const ImageUploader = () => {
 	const [uploading, setUploading] = useState(false);
@@ -44,8 +44,8 @@ const ImageUploader = () => {
 
 			{!uploading && (
 				<>
-					<label className="button">
-						📸 Subir imagen
+					<label className="button button--default">
+						Subir imagen
 						<input
 							type="file"
 							onChange={uploadFile}

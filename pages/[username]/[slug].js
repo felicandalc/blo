@@ -1,23 +1,25 @@
-import {firestore, getUserWithUsername, postToJSON} from '../../lib/firebase';
 import {useDocumentData} from 'react-firebase-hooks/firestore';
 import Link from 'next/link';
+import {firestore, getUserWithUsername, postToJSON} from '@/lib/firebase';
 
-import s from '../../styles/PostPage.module.scss';
+import c from 'classnames';
+import s from '@/styles/PostPage.module.scss';
 
-import {PostContent} from '../../components/PostContent';
-import {Metatags} from '../../components/Metatags';
-import {HeartButton} from '../../components/HeartButton';
-import {AuthCheck} from '../../components/AuthCheck';
+import {PostContent} from '@/components/PostContent';
+import {Metatags} from '@/components/Metatags';
+import {HeartButton} from '@/components/HeartButton';
+import {AuthCheck} from '@/components/AuthCheck';
 
 const PostPage = ({path, post}) => {
 	const postRef = firestore.doc(path);
 	const [realtimePost] = useDocumentData(postRef);
+	const classes = c(s['post-page'], 'box');
 
 	const _post = realtimePost || post;
 
 	return (
 		<>
-			<section className={s['post-page']}>
+			<section className={classes}>
 				<Metatags title={_post.title} />
 				<PostContent post={_post} />
 
@@ -29,7 +31,9 @@ const PostPage = ({path, post}) => {
 					<AuthCheck
 						fallback={
 							<Link href="/login">
-								<button>💗 Ingresar</button>
+								<button className="button button__default-inverted">
+									💗 Ingresar
+								</button>
 							</Link>
 						}>
 						<HeartButton postRef={postRef} />

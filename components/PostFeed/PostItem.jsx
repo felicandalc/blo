@@ -29,7 +29,9 @@ const PostItem = ({post, admin = false}) => {
 				<span>
 					{wordCount} palabras. {minutesToRead} minutos de lectura.
 				</span>
-				<strong>💗 {post.heartCount || 0} Hearts</strong>
+				<strong className={s['post-card__hearts']}>
+					💗 {post.heartCount || 0}
+				</strong>
 			</footer>
 
 			{/* If admin view, show extra controls for user */}

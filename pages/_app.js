@@ -1,10 +1,10 @@
-import {useUserData} from '../lib/hooks';
-import {UserContext} from '../lib/userContext';
 import {Toaster} from 'react-hot-toast';
+import {useUserData} from '@/lib/hooks';
+import {UserContext} from '@/lib/userContext';
 
-import '../styles/globals.scss';
+import '@/styles/globals.scss';
 
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 
 function MyApp({Component, pageProps}) {
 	const userData = useUserData();

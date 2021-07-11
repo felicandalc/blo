@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import {UserContext} from '../../lib/userContext';
 import {firestore, auth, serverTimestamp} from '../../lib/firebase';
 
+import c from 'classnames';
 import s from '../../styles/AdminPage.module.scss';
 
 import {Metatags} from '../../components/Metatags';
@@ -14,8 +15,10 @@ import {AuthCheck} from '../../components/AuthCheck';
 import {PostFeed} from '../../components/PostFeed';
 
 const AdminPage = ({}) => {
+	const classes = c(s['admin-page'], 'box');
+
 	return (
-		<section className={s['admin-page']}>
+		<section className={classes}>
 			<AuthCheck>
 				<Metatags title="Admin page" />
 				<PostList />

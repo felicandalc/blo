@@ -1,6 +1,6 @@
 import s from './UserProfile.module.scss';
 
-import FallbackIcon from '../../public/person-circle.svg';
+import FallbackIcon from '@/public/person-circle.svg';
 
 const UserProfile = ({user}) => (
 	<article className={s['user-profile']}>
