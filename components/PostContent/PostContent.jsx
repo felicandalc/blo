@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 import s from './PostContent.module.scss';
+
+import {HighLight} from '@/lib/highlight';
 
 const PostContent = ({post}) => {
 	const createdAt =
@@ -13,7 +16,7 @@ const PostContent = ({post}) => {
 		<article className={s['post-content']}>
 			<h1 className={s['post-content__title']}>{post?.title}</h1>
 
-			<ReactMarkdown className={s['post-content__body']}>
+			<ReactMarkdown rehypePlugins={[rehypeRaw]} components={HighLight}>
 				{post?.content}
 			</ReactMarkdown>
 

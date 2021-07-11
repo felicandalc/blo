@@ -1,14 +1,13 @@
 import {serverTimestamp} from '../../lib/firebase';
 import {useForm} from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {dracula} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import rehypeRaw from 'rehype-raw';
 import toast from 'react-hot-toast';
 
 import c from 'classnames';
 import s from './PostForm.module.scss';
 
+import {Hightlight} from '@lib/highlight';
 import {ImageUploader} from '@/components/ImageUploader';
 
 const PostForm = ({defaultValues, postRef, preview}) => {
@@ -43,7 +42,7 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 				<div className={s['post-form__preview']}>
 					<ReactMarkdown
 						rehypePlugins={[rehypeRaw]}
-						components={components}>
+						components={Hightlight}>
 						{watch('content')}
 					</ReactMarkdown>
 				</div>
@@ -85,25 +84,6 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 			</div>
 		</form>
 	);
-};
-
-const components = {
-	code({node, inline, className, children, ...props}) {
-		const match = /language-(\w+)/.exec(className || '');
-		return !inline && match ? (
-			<SyntaxHighlighter
-				style={dracula}
-				language={match[1]}
-				PreTag="div"
-				{...props}>
-				{String(children).replace(/\n$/, '')}
-			</SyntaxHighlighter>
-		) : (
-			<code className={className} {...props}>
-				{children}
-			</code>
-		);
-	},
 };
 
 export default PostForm;
