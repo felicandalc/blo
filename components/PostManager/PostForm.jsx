@@ -63,7 +63,7 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 					})}
 					contentEditable></textarea>
 
-				<label className="button button--default" for="published">
+				<label className="button button--default" htmlFor="published">
 					<input
 						id="published"
 						type="checkbox"
@@ -95,9 +95,9 @@ const components = {
 				style={dracula}
 				language={match[1]}
 				PreTag="div"
-				children={String(children).replace(/\n$/, '')}
-				{...props}
-			/>
+				{...props}>
+				{String(children).replace(/\n$/, '')}
+			</SyntaxHighlighter>
 		) : (
 			<code className={className} {...props}>
 				{children}
