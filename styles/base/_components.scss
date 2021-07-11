@@ -10,12 +10,13 @@
 	transition: 0.3s ease-in-out;
 
 	&:active {
-		color: $white;
-		background: $black;
+		box-shadow: $shadow-low;
+		transform: translateY(0.075rem);
 	}
 
 	&:hover {
-		box-shadow: $shadow-low;
+		color: $white;
+		background: $black;
 	}
 
 	&:disabled {

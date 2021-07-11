@@ -1,10 +1,14 @@
 import Link from 'next/link';
 
+import c from 'classnames';
 import s from './PostItem.module.scss';
 
 const PostItem = ({post, admin = false}) => {
 	const wordCount = post?.content.trim().split(/\s+/g).length;
 	const minutesToRead = (wordCount / 100 + 1).toFixed(0);
+
+	const pClasses = c(s['post-card--published'], s['post-card--state']);
+	const uClasses = c(s['post-card--unpublished'], s['post-card--state']);
 
 	return (
 		<article className={s['post-card']}>
@@ -34,16 +38,21 @@ const PostItem = ({post, admin = false}) => {
 				</strong>
 			</footer>
 
-			{/* If admin view, show extra controls for user */}
 			{admin && (
 				<>
 					<Link href={`/admin/${post.slug}`}>
 						<h3>
-							<button>Editar</button>
+							<button className="button button--default">
+								Editar
+							</button>
 						</h3>
 					</Link>
 
-					{post.published ? <p>Publicado</p> : <p>No publicado</p>}
+					{post.published ? (
+						<p className={pClasses}>Publicado</p>
+					) : (
+						<p className={uClasses}>No publicado</p>
+					)}
 				</>
 			)}
 		</article>

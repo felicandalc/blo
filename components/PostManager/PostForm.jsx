@@ -1,6 +1,9 @@
 import {serverTimestamp} from '../../lib/firebase';
 import {useForm} from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import {dracula} from 'react-syntax-highlighter/dist/esm/styles/prism';
+import rehypeRaw from 'rehype-raw';
 import toast from 'react-hot-toast';
 
 import c from 'classnames';
@@ -28,14 +31,21 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 
 		reset({content, published});
 
-		toast.success('Post editado!');
+		toast.success('Post editado!', {
+			position: 'bottom-right',
+			style: {background: '#333333', color: '#F5F5F5'},
+		});
 	};
 
 	return (
 		<form className={s['post-form']} onSubmit={handleSubmit(updatePost)}>
 			{preview && (
 				<div className={s['post-form__preview']}>
-					<ReactMarkdown>{watch('content')}</ReactMarkdown>
+					<ReactMarkdown
+						rehypePlugins={[rehypeRaw]}
+						components={components}>
+						{watch('content')}
+					</ReactMarkdown>
 				</div>
 			)}
 
@@ -75,6 +85,25 @@ const PostForm = ({defaultValues, postRef, preview}) => {
 			</div>
 		</form>
 	);
+};
+
+const components = {
+	code({node, inline, className, children, ...props}) {
+		const match = /language-(\w+)/.exec(className || '');
+		return !inline && match ? (
+			<SyntaxHighlighter
+				style={dracula}
+				language={match[1]}
+				PreTag="div"
+				children={String(children).replace(/\n$/, '')}
+				{...props}
+			/>
+		) : (
+			<code className={className} {...props}>
+				{children}
+			</code>
+		);
+	},
 };
 
 export default PostForm;

@@ -23,9 +23,27 @@
 		top: 2vh;
 	}
 
+	h3 {
+		margin-bottom: 0;
+	}
 	footer {
 		*:first-child {
 			font-size: 0.9em;
 		}
+	}
+
+	&--state {
+		position: absolute;
+		right: 2vw;
+		bottom: 2vh;
+		font-size: 0.8em;
+		margin: 0;
+	}
+
+	&--published {
+		color: var(--accent);
+	}
+	&--unpublished {
+		color: var(--error);
 	}
 }

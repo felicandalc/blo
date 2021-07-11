@@ -78,7 +78,10 @@ const CreateNewPost = () => {
 
 		await ref.set(data);
 
-		toast.success('Post creado');
+		toast.success('Post creado', {
+			position: 'bottom-right',
+			style: {background: '#333333', color: '#F5F5F5'},
+		});
 
 		router.push(`/admin/${slug}`);
 	};
