@@ -54,7 +54,7 @@ const Home = ({posts}) => {
 				</button>
 			)}
 
-			<Spinner show={true} />
+			<Spinner show={loading} />
 
 			{postsEnd && (
 				<p className={s['home__no-more']}>No hay más posts...</p>
