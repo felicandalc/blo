@@ -1,10 +1,10 @@
-import {getUserWithUsername, postToJSON} from '../../lib/firebase';
+import {getUserWithUsername, postToJSON} from '@/lib/firebase';
 
-import s from '../../styles/UserPage.module.scss';
+import s from '@/styles/UserPage.module.scss';
 
-import {UserProfile} from '../../components/UserProfile';
-import {PostFeed} from '../../components/PostFeed';
-import {Metatags} from '../../components/Metatags';
+import {UserProfile} from '@/components/UserProfile';
+import {PostFeed} from '@/components/PostFeed';
+import {Metatags} from '@/components/Metatags';
 
 const ProfilePage = ({user, posts}) => {
 	return (

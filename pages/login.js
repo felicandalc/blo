@@ -1,9 +1,9 @@
 import {useContext, useState, useEffect, useCallback} from 'react';
-import {UserContext} from '../lib/userContext';
-import {auth, googleAuthProvider, firestore} from '../lib/firebase';
+import {UserContext} from '@/lib/userContext';
+import {auth, googleAuthProvider, firestore} from '@/lib/firebase';
 import debounce from 'lodash.debounce';
 
-import s from '../styles/Login.module.scss';
+import s from '@/styles/Login.module.scss';
 
 const Login = () => {
 	const {user, username} = useContext(UserContext);
