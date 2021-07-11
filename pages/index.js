@@ -43,7 +43,7 @@ const Home = ({posts}) => {
 
 	return (
 		<section className={classes}>
-			<Metatags title="Inicio" />
+			<Metatags title="Simple blog" />
 			<PostFeed posts={_posts} />
 
 			{!loading && !postsEnd && (
