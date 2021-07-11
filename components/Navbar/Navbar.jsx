@@ -60,7 +60,9 @@ const Navbar = () => {
 					{!username && (
 						<li>
 							<Link href="/login">
-								<button>Ingresar</button>
+								<button className="button button--default-inverted">
+									Ingresar
+								</button>
 							</Link>
 						</li>
 					)}
