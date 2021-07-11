@@ -1,0 +1,34 @@
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 64px;
+	box-shadow: var(--shadow-1);
+	border-top: thin solid var(--grey);
+	margin-top: 40px;
+
+	&__right {
+		margin-left: 3px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	> div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	a {
+		color: var(--accent);
+	}
+	svg {
+		margin-left: 8px;
+		width: 24px;
+		height: 24px;
+
+		path {
+			fill: var(--accent);
+		}
+	}
+}

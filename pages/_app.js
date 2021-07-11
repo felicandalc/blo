@@ -5,6 +5,7 @@ import {UserContext} from '@/lib/userContext';
 import '@/styles/globals.scss';
 
 import {Navbar} from '@/components/Navbar';
+import {Footer} from '@/components/Footer';
 
 function MyApp({Component, pageProps}) {
 	const userData = useUserData();
@@ -12,10 +13,11 @@ function MyApp({Component, pageProps}) {
 	return (
 		<UserContext.Provider value={userData}>
 			<Navbar />
-			<main className="main">
+			<main>
 				<Component {...pageProps} />
 			</main>
 			<Toaster />
+			<Footer />
 		</UserContext.Provider>
 	);
 }
