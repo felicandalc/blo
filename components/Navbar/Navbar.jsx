@@ -3,6 +3,7 @@ import {useRouter} from 'next/router';
 import {UserContext} from '@/lib/userContext';
 import {auth} from '@/lib/firebase';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import s from './Navbar.module.scss';
 import FallbackIcon from '@/public/person-circle.svg';
@@ -47,7 +48,7 @@ const Navbar = () => {
 							</li>
 							<li>
 								<Link href={`/${username}`}>
-									<img
+									<Image
 										src={user.photoURL || FallbackIcon}
 										alt="User photo."
 									/>
