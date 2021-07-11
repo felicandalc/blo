@@ -4,7 +4,7 @@ import {UserContext} from '@/lib/userContext';
 
 import '@/styles/globals.scss';
 
-import Navbar from '@/components/Navbar/Navbar';
+import {Navbar} from '@/components/Navbar';
 
 function MyApp({Component, pageProps}) {
 	const userData = useUserData();

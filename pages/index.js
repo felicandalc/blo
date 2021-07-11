@@ -3,7 +3,7 @@ import {firestore, fromMillis, postToJSON} from '@/lib/firebase';
 import CONFIG from '@/config/index';
 
 import c from 'classnames';
-import s from '@/styles/Home.module.scss';
+import s from '@/styles/pages/Home.module.scss';
 
 import {Spinner} from '@/components/Spinner';
 import {PostFeed} from '@/components/PostFeed';
@@ -54,7 +54,7 @@ const Home = ({posts}) => {
 				</button>
 			)}
 
-			<Spinner show={loading} />
+			<Spinner show={true} />
 
 			{postsEnd && (
 				<p className={s['home__no-more']}>No hay más posts...</p>

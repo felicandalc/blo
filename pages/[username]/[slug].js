@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {firestore, getUserWithUsername, postToJSON} from '@/lib/firebase';
 
 import c from 'classnames';
-import s from '@/styles/PostPage.module.scss';
+import s from '@/styles/pages/PostPage.module.scss';
 
 import {PostContent} from '@/components/PostContent';
 import {Metatags} from '@/components/Metatags';

@@ -2,9 +2,9 @@ import {useContext} from 'react';
 import {useRouter} from 'next/router';
 import {UserContext} from '@/lib/userContext';
 import {auth} from '@/lib/firebase';
-
 import Link from 'next/link';
 
+import s from './Navbar.module.scss';
 import FallbackIcon from '@/public/person-circle.svg';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
 
 	return (
 		<header>
-			<nav className="navbar">
+			<nav className={s.navbar}>
 				<ul className="box">
 					<li>
 						<Link href="/">

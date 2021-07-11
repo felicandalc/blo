@@ -1,14 +1,14 @@
 .navbar {
 	height: 64px;
 	width: 100%;
-	background: $white;
-	color: $black;
+	background: var(--white);
+	color: var(--black);
 	position: fixed;
 	top: 0;
 	padding: 0 5vw;
 	font-weight: bold;
-	border-bottom: thin solid $grey;
-	box-shadow: $shadow-1;
+	border-bottom: thin solid var(--grey);
+	box-shadow: var(--shadow-1);
 	z-index: 17;
 
 	ul {

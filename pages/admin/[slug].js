@@ -1,5 +1,5 @@
 import c from 'classnames';
-import s from '@/styles/EditPost.module.scss';
+import s from '@/styles/pages/EditPost.module.scss';
 
 import {Metatags} from '@/components/Metatags';
 import {AuthCheck} from '@/components/AuthCheck';

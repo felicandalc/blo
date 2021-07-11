@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import s from '@/styles/Page404.module.scss';
+import s from '@/styles/pages/Page404.module.scss';
 
 const Page404 = () => {
 	return (

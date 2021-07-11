@@ -1,11 +1,5 @@
 // Base
-@import 'variables';
-@import 'reset';
-@import 'animations';
-@import 'helpers';
-
-// Components
-@import '../components/index';
-
-// Others components
-@import './components';
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/helpers';
+@import 'base/components';

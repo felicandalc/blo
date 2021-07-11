@@ -1,6 +1,6 @@
 import {getUserWithUsername, postToJSON} from '@/lib/firebase';
 
-import s from '@/styles/UserPage.module.scss';
+import s from '@/styles/pages/UserPage.module.scss';
 
 import {UserProfile} from '@/components/UserProfile';
 import {PostFeed} from '@/components/PostFeed';
